@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>[thefacebook]</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Verdana, Arial sans-serif;
+                font-size: 11px;
+                background-color: #ffffff;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            .header {
+                background: linear-gradient(to bottom, #3b5998, #2d4373);
+                color: white;
+                padding: 10px;
+            }
+            .header-title {
+                font-size: 24px;
+                font-weight: bold;
+                color: #9cb4d8;
+            }
+            .nav-link {
+                color: #9cb4d8;
+                text-decoration: none;
+                padding: 0 10px;
+                font-size: 11px;
+            }
+            .nav-link:hover {
+                color: white;
+            }
+            .sidebar {
+                background-color: #f0f0f0;
+                border: 1px solid #cccccc;
+                padding: 10px;
+                width: 160px;
+            }
+            .sidebar-section {
+                background-color: white;
+                border: 1px dotted #999999;
+                padding: 8px;
+                margin-bottom: 10px;
+            }
+            .sidebar-link {
+                color: #3b5998;
+                text-decoration: none;
+                display: block;
+                padding: 3px 0;
+            }
+            .sidebar-link:hover {
+                text-decoration: underline;
+            }
+            .section-header {
+                background-color: #3b5998;
+                color: white;
+                padding: 5px;
+                font-weight: bold;
+                font-size: 12px;
+            }
+            .content-box {
+                border: 1px solid #3b5998;
+                margin-bottom: 15px;
+                background-color: white;
+            }
+            .profile-pic {
+                width: 100%;
+                max-width: 260px;
+            }
+            .button {
+                background-color: #f0f0f0;
+                border: 1px solid #999999;
+                padding: 5px 10px;
+                margin: 3px 0;
+                display: block;
+                text-decoration: none;
+                color: #333333;
+                text-align: center;
+            }
+            .button:hover {
+                background-color: #e0e0e0;
+            }
+            .info-label {
+                font-weight: bold;
+                color: #333333;
+            }
+            .info-value {
+                color: #3b5998;
+            }
+            .edit-link {
+                color: #3b5998;
+                text-decoration: none;
+                font-size: 11px;
+            }
+            .edit-link:hover {
+                text-decoration: underline;
+            }
+            .city-name {
+                color: #666666;
+                font-size: 11px;
+            }
+        </style>
+    </head>
+    <body>
+        <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="header">
+                    <table width="100%" cellpadding="5" cellspacing="0">
+                        <tr>
+                            <td width="30%">
+                                <img src="images/f_logo.webp" alt="Profile" style="width:60px; height:60px;">
+                            </td>
+                            <td align="right">
+                                <span class="header-title">[thefacebook]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right">
+                                <a href="#" class="nav-link">home</a>
+                                <a href="#" class="nav-link">search</a>
+                                <a href="#" class="nav-link">global</a>
+                                <a href="#" class="nav-link">social net</a>
+                                <a href="#" class="nav-link">invite</a>
+                                <a href="#" class="nav-link">faq</a>
+                                <a href="#" class="nav-link">logout</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table width="100%" cellpadding="10" cellspacing="0">
+            <tr>
+                <td valign="top" width="180">
+                    <div class="sidebar">
+                        <div class="sidebar-section">
+                            <strong>Quick search</strong>
+                            <input type="text" style="width: 90px; margin-top: 5px;">
+                            <button style="margin-top: 3px; background-color: #3b5998; color: white; border: none; padding: 3px 8px;">go</button>
+                        </div>
+                        <div class="sidebar-section">
+                            <a href="#" class="sidebar-link">My Profile [edit]</a>
+                            <a href="#" class="sidebar-link">My Groups</a>
+                            <a href="#" class="sidebar-link">My Friends</a>
+                            <a href="#" class="sidebar-link">My Messages</a>
+                            <a href="#" class="sidebar-link">My Away Messages</a>
+                            <a href="#" class="sidebar-link">My Mobile Info</a>
+                            <a href="#" class="sidebar-link">My Account</a>
+                            <a href="#" class="sidebar-link">My Privacy</a>
+                        </div>
+                    </div>
+                </td>
+                <td valign="top">
+                    <table width="100%" cellpading="5" cellspacing="0" style="border-bottom: 2px solid #3b5998; margin-bottom: 10px;">
+                        <tr>
+                            <td>
+                                <span style="font-size: 14px; font-weight: bold; color: #3b5998;">D.Burenkhaan's Profile (This is you)</span>
+                            </td>
+                            <td align="right">
+                                <span class="city-name">Ulaanbaatar</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" cellpadding="0" cellspacing="10">
+                    <tr>
+                        <td valign="top" width="50%">
+                            <div class="content-box">
+                                <div class="section-header">
+                                    Picture <a href="#" class="edit-link" style="color:white; float:right;">[edit]</a>
+                                </div>
+                                <div style="padding:7px; text-align:center;">
+                                    <img src="images/profile.jpg" class="profile-pic">
+                                </div>
+                            </div>
+                            <div style="margin-top:10px;">
+                                <a href="#" class="button">Visualize My Friends</a>
+                                <a href="#" class="button">Edit My Profile</a>
+                                <a href="#" class="button">My Account Preferences</a>
+                                <a href="#" class="button">My Privacy Preferences</a>
+                            </div>
+                            <div class="content-box" style="margin-top:10px;">
+                                <div class="section-header">Connection</div>
+                                <div style="padding:10px; text-align:center;">
+                                    This is you.
+                                </div>
+                            </div>
+                            <div class="content-box" style="margin-top:10px;">
+                                <div class="section-header">Access</div>
+                                <div style="padding:10px;">
+                                    Burnee is currently logged in from a<br>non-residential location.
+                                </div>
+                            </div>
+                            <div class="content-box" style="margin-top:10px;">
+                                <div class="section-header">
+                                    Other Schools <a href="#" class="edit-link" style="color:white; float:right;">[edit]</a>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td valign="top" width="50%">
+                            <div class="content-box">
+                                <div class="section-header">
+                                    Information <a href="#" class="edit-link" style="color:white; float:right;">[edit]</a>
+                                </div>
+                                <div style="padding:10px;">
+                                    <table cellpadding="3" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td colspan="2"><strong>Account Info:</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Name:</td>
+                                            <td>Burenkhaan, 21</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Member Since:</td>
+                                            <td>January 31, 2017</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Last Update:</td>
+                                            <td>October 8, 2025</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><strong>Basic Info:</strong> <a href="#" class="edit-link" style="float:right;">[edit]</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Email:</td>
+                                            <td class="info-value">caccout5@gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Status:</td>
+                                            <td>Alumnus/Alumna</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Sex:</td>
+                                            <td class="info-value">Male</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Year:</td>
+                                            <td class="info-value">2004</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Concentration:</td>
+                                            <td class="info-value">Computing Sciences<br>Mathematics</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Phone:</td>
+                                            <td class="info-value">66199827</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">High School:</td>
+                                            <td class="info-value">Delgermurun</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><strong>Extended Info:</strong> <a href="#" class="edit-link" style="float:right;">[edit]</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Screenname:</td>
+                                            <td class="info-value">ScottieP87</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Looking For:</td>
+                                            <td class="info-value">Friendship<br>Dating<br>A Relationship<br>Random play<br>Whatever I can get</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Interested In:</td>
+                                            <td class="info-value">Women</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Relationship Status:</td>
+                                            <td class="info-value">Single</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Political Views:</td>
+                                            <td class="info-value">Liberal</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-label">Interests:</td>
+                                            <td class="info-value">Drinking, Playing mobile games, CS2<br>saying you'll have that</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
