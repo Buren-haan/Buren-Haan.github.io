@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Д.Бүрэнхaaн</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+Mongolian&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fira Code', monospace;
+            background: linear-gradient(135deg, #0a1a0a 0%, #1a0f00 100%);
+            color: #00ff66;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .terminal-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 4px double #cfa670; 
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(207, 166, 112, 0.5);
+            background: radial-gradient(circle at center, rgba(10, 20, 10, 0.92), rgba(0, 10, 0, 0.97));
+        }
+
+        .terminal-header {
+            background: linear-gradient(90deg, #800000 0%, #cfa670 100%);
+            padding: 10px 20px;
+            border-bottom: 3px solid #cfa670;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .terminal-header img {
+            height: 20px;
+        }
+
+        .terminal-title {
+            font-family: 'Noto Sans Mongolian', sans-serif;
+            font-size: 14px;
+            color: #ffe8b3;
+        }
+
+        .terminal-body {
+            padding: 40px;
+            line-height: 1.8;
+        }
+
+        .keyword { color: #ff79c6; font-weight: bold; }
+        .type { color: #58bbf7; }
+        .string { color: #aa5303; }
+        .comment { color: #f1e1a6; font-style: italic; }
+        .function { color: #fcf69a; }
+        .number { color: #bd93f9; }
+        .variable { color: #8be9fd; }
+
+        .name {
+            font-family: 'Noto Sans Mongolian', sans-serif;
+            font-size: 46px;
+            font-weight: 700;
+            color: #cfa670;
+            margin: 20px 0 10px 0;
+            text-align: center;
+        }
+
+        .role {
+            font-family: 'Noto Sans Mongolian', sans-serif;
+            font-size: 22px;
+            color: #ffdc73;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #cfa670;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(207, 166, 112, 0.3);
+        }
+
+        .section {
+            margin: 30px 0;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+        }
+
+        .footer-comment {
+            color: #f5e6b3;
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <img src="images/soymbo.jpg">
+            <span class="terminal-title">burenkhaan@mongolia:~/cv.cpp</span>
+        </div>
+
+        <div class="terminal-body">
+            <img src="images/bi.jpg" alt="Profile" class="profile-image">
+            <div class="name">Д.Бүрэнхaaн</div>
+            <div class="role">BACKEND ХӨГЖҮҮЛЭГЧ</div>
+
+            <div><span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span></div>
+            <div><span class="keyword">using namespace</span> <span class="type">std</span>;</div>
+            <br>
+            <div><span class="keyword">class</span> <span class="type">Developer</span> {</div>
+            <div><span class="keyword">public</span>:</div>
+
+            <div class="section">
+                <div class="comment">    // ХОЛБОО БАРИХ МЭДЭЭЛЭЛ</div>
+                <div class="contact-item"><span class="type">string</span> <span class="variable">email</span> = <span class="string">"caccout5@gmail.com"</span>;</div>
+                <div class="contact-item"><span class="type">string</span> <span class="variable">phone</span> = <span class="string">"66196645"</span>;</div>
+                <div class="contact-item"><span class="type">string</span> <span class="variable">location</span> = <span class="string">"Монгол Улс"</span>;</div>
+            </div>
+
+            <div class="section">
+                <div class="comment">    // ТОВЧ ТАНИЛЦУУЛГА</div>
+                <div><span class="type">string</span> <span class="variable">summary</span> = <span class="string">"(</span></div>
+                <div class="string" style="margin-left: 20px;">
+                    Сервер талын програмчлалд дуртай, өгөгдлийн бүтэц, системийн гүйцэтгэлд анхаардаг
+                </div>
+                <div class="string" style="margin-left: 20px;">
+                    Backend хөгжүүлэгч. API бүтэц, Docker орчин, микросервисийн архитектурт дадлагатай.
+                </div>
+                <div><span class="string">)"</span>;</div>
+            </div>
+
+            <div class="section">
+                <div class="comment">    // УР ЧАДВАРУУД</div>
+                <div><span class="type">string</span> <span class="variable">skills</span>[<span class="number">6</span>] = {</div>
+                <div style="margin-left: 20px;">
+                    <div class="string">"C"</div>
+                    <div class="string">"C++"</div>
+                    <div class="string">"Python"</div>
+                    <div class="string">"Go"</div>
+                    <div class="string">"REST API"</div>
+                    <div class="string">"Docker"</div>
+                </div>
+                <div>    };</div>
+            </div>
+
+            <div class="section">
+                <div class="comment">    // БОЛОВСРОЛ</div>
+                <div><span class="keyword">struct</span> <span class="type">Education</span> {</div>
+                <div style="margin-left: 20px;">
+                    <span class="type">string</span> <span class="variable">degree</span> = <span class="string">"Компьютерийн ухааны бакалавр"</span>;
+                </div>
+                <div style="margin-left: 20px;">
+                    <span class="type">string</span> <span class="variable">university</span> = <span class="string">"Монгол Улсын Их Сургууль"</span>;
+                </div>
+                <div>    } <span class="variable">edu</span>;</div>
+            </div>
+
+            <div class="section">
+                <div>};</div>
+                <br>
+                <div><span class="type">int</span> <span class="function">main</span>() {</div>
+                <div style="margin-left: 20px;">
+                    <span class="type">Developer</span> <span class="variable">dev</span>;
+                </div>
+                <div style="margin-left: 20px;">
+                    <span class="variable">cout</span> <span class="keyword">&lt;&lt;</span> <span class="string">"Цаашид өргөжүүлэх боломжтой backend систем бүтээхэд бэлэн!"</span> <span class="keyword">&lt;&lt;</span> <span class="function">endl</span>;
+                </div>
+                <div style="margin-left: 20px;"><span class="keyword">return</span> <span class="number">0</span>;</div>
+                <div>}</div>
+            </div>
+
+            <div class="footer-comment">
+                <div class="comment">// Амжилттай хөрвүүллээ</div>
+                <div class="comment">// Гаралт: Ирээдүйн Мэргэжлийн Backend Хөгжүүлэгч</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
