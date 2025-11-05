@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap-lab5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .header {
+            background: linear-gradient(to bottom, 
+    #1b1b6c 0%, 
+    #1b1b6c 27%,   
+    #13124f 27%, 
+    #13124f 100%);
+  color: white;
+  padding: 80px 0 100px;
+ }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 60px;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1a1a4e;
+            font-size: 18px;
+        }
+        
+        .logo-text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .hero-title {
+            font-size: 72px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background: #ff0066;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background: #e6005c;
+        }
+        
+        .main-content {
+            background: #f5f5f5;
+            padding: 60px 0;
+        }
+        
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 30px;
+        }
+        
+        .left-section {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .content-heading {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .content-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            margin-bottom: 30px;
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450"><rect fill="%23666" width="800" height="450"/></svg>');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: red;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 25px solid white;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            margin-left: 5px;
+        }
+        
+        .video-title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .alert-box {
+            background: #8b8ba0;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .alert-icon {
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .right-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .message-box {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .message-header {
+            background: #ff0066;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        
+        .message-badge {
+            background: #352ba5;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .message-content {
+            background: #8b8ba0;
+            color: white;
+            padding: 20px;
+        }
+        
+        .message-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .chat-box {
+            background: linear-gradient(135deg, #1a1a4e 0%, #2d2d7e 100%);
+            padding: 20px;
+            color: white;
+        }
+        
+        .chat-text {
+            font-size: 15px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .chat-text em {
+            font-style: italic;
+        }
+        
+        .chat-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #5555aa;
+            background: transparent;
+            color: white;
+            margin-bottom: 10px;
+            outline: none;
+        }
+        
+        .chat-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .btn-send {
+            width: 100%;
+            background: #ff0066;
+            color: white;
+            padding: 12px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+        
+        .chat-footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+        
+        .chat-footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .vote-box {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .vote-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .vote-bars {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .vote-bar {
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .vote-bar.pink {
+            flex: 3;
+            background: #ff0066;
+        }
+        
+        .vote-bar.green {
+            flex: 2;
+            background: #00d9a5;
+        }
+        
+        .vote-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .btn-vote {
+            padding: 12px 20px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .btn-cool {
+            background: #ff0066;
+            color: white;
+        }
+        
+        .btn-lame {
+            background: white;
+            color: #00d9a5;
+            border: 2px solid #00d9a5;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1a1a4e 0%, #2d2d7e 100%);
+            color: white;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 968px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <div class="logo-icon">W</div>
+                    <div class="logo-text">Webjunto</div>
+                </div>
+                <h1 class="hero-title">Hello, world!</h1>
+                <p class="hero-subtitle">Welcome to Bootsrap v3.3.7. Check out this awesome jumbotron!</p>
+                <button class="btn-primary">Learn More</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="container">
+                <div class="content-wrapper">
+                    <div class="left-section">
+                        <h2 class="content-heading">Heading goes here</h2>
+                        <p class="content-text">
+                            Cupcake ipsum dolor sit amet caramels halvah souffle sugar plum. Fruitcake lollipop tiramisu pastry halvah sweet lemon drops. Jelly beans marshmallow jujubes. Pudding macaroon chocolate cake chups. Tootsie roll wafer jelly beans cotton candy jelly. Liquorice chocolate cake tart jelly. Chocolate pastry liquorice cupcake chocolate.
+                        </p>
+                        <div class="video-container">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IKjUn1TnP5M?si=KLDt8y2qPKJJQMFD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0;"></iframe>
+                        </div>
+                        <div class="alert-box">
+                            <div class="alert-icon">i</div>
+                            <div>Whoa! This is a super important alert!</div>
+                        </div>
+                    </div>
+                    <div class="right-sidebar">
+                        <div class="message-box">
+                            <div class="message-header">
+                                <i class="bi bi-envelope"></i>
+                                <span> MESSAGE</span>
+                                <span class="message-badge">3</span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-title">Welcome Candidate!</div>
+                            </div>
+                            <div class="chat-box">
+                                <p class="chat-text">
+                                    You are a Starfleet Academy candidate. Greet the Captain in a <em>respectful</em> fashion.
+                                </p>
+                                <input type="text" class="chat-input" placeholder="Input your greeting..">
+                                <button class="btn-send">SEND</button>
+                                <div class="chat-footer">
+                                    <a href="#">I don't watch Star Trek and dont't get this reference</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vote-box">
+                            <div class="vote-title">
+                                Cast your vote! What do you think about space? See vote progress bar below!
+                            </div>
+                            <div class="vote-bars">
+                            <div class="vote-bar pink"></div>
+                            <div class="vote-bar green"></div>
+                        </div>
+                        
+                        <div class="vote-buttons">
+                            <button class="btn-vote btn-cool">COOL</button>
+                            <button class="btn-vote btn-lame">LAME</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+        <div class="container">
+            2017 All Rights Reserved, SomeCompany.
+        </div>
+    </div>
+    </body>
+</html>
