@@ -3,360 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Louis Vuitton - A world-renowned luxury fashion brand. Skilled craftsmanship, top-quality manufacturing, timeless design.">
-    <meta name="keywords" content="LV, Louis Vuitton, luxury fashion, bags, gloves, shoes, watches, jewelry">
+    <meta name="description" content="Louis Vuitton - World-renowned luxury fashion brand. Discover luxury bags, accessories, shoes and ready-to-wear collections with skilled craftsmanship.">
+    <meta name="keywords" content="Louis Vuitton, LV, luxury bags, designer handbags, leather goods, fashion accessories, luxury watches, jewelry">
     
     <meta name="author" content="Louis Vuitton">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     
-    <meta property="og:title" content="LOUIS VUITTON - Luxury Fashion Brand">
-    <meta property="og:description" content="Discover the world of Louis Vuitton: luxury bags, accessories, shoes and ready-to-wear collections.">
+    <meta property="og:title" content="LOUIS VUITTON - Luxury Fashion & Leather Goods">
+    <meta property="og:description" content="Discover the world of Louis Vuitton: luxury bags, accessories, shoes and ready-to-wear collections with timeless design.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.louisvuitton.com">
     <meta property="og:image" content="https://www.louisvuitton.com/images/og-image.jpg">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LOUIS VUITTON">
-    <meta name="twitter:description" content="Louis Vuitton official website. Discover our latest collections and exclusive pieces.">
+    <meta name="twitter:title" content="LOUIS VUITTON - Official Online Store">
+    <meta name="twitter:description" content="Louis Vuitton official website. Discover our latest collections and exclusive luxury pieces.">
     <meta name="twitter:image" content="https://www.louisvuitton.com/images/twitter-card.jpg">
     
     <link rel="canonical" href="https://www.louisvuitton.com">
-    
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
-    <title>LOUIS VUITTON</title>
+    <title>LOUIS VUITTON - Luxury Fashion Bags, Leather Goods & Accessories</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <table class="header-table">
-        <tr>
-            <td class="header-left">
-                <button class="menu-btn">Menu</button>
-                <button class="search-btn">Search</button>
-            </td>
-            <td class="header-center">
-                <a href="#" class="logo">LOUIS VUITTON</a>
-            </td>
-            <td class="header-right" class="header-icons">
-                <a href="#">Call Us</a>
-                <a href="#"><i class="bi bi-heart"></i></a>
-                <a href="#"><i class="bi bi-person"></i></a>
-            </td>
-        </tr>
-    </table>
-    
-    <div class="hero-section" id="gifts-hero">
-        <video autoplay muted loop playsinline class="hero-video">
+    <header class="header" role="banner">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="menu-btn" aria-label="Open menu">☰ Menu</button>
+                <button class="search-btn" aria-label="Search products">🔍︎ Search</button>
+            </div>
+            
+            <div class="header-center">
+                <a href="#" class="logo" aria-label="Louis Vuitton homepage">LOUIS VUITTON</a>
+            </div>
+            
+            <div class="header-right">
+                <a href="tel:+18002854896" class="header-link" aria-label="Call us">Call Us</a>
+                <a href="#" class="header-link" aria-label="Wishlist"><i class="bi bi-heart" aria-hidden="true"></i></a>
+                <a href="#" class="header-link" aria-label="Account"><i class="bi bi-person" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section" id="gifts-hero" role="region" aria-label="Holiday gifts collection">
+        <video autoplay muted loop playsinline class="hero-video" aria-label="Louis Vuitton holiday collection video">
             <source src="images/video.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
-            <div class="hero-label">GIFTS</div>
+            <p class="hero-label">GIFTS</p>
             <h1 class="hero-title">Holiday Season</h1>
             <div class="hero-links">
-                <a href="#gifts-her">Gifts for Her</a>
-                <a href="#gifts-him">Gifts for Him</a>
+                <a href="#gifts-her" class="hero-link">Gifts for Her</a>
+                <a href="#gifts-him" class="hero-link">Gifts for Him</a>
             </div>
         </div>
-    </div>
-    
-    <h2 class="section-title" id="gifts-her">Explore a Selection of the Maison's Creations</h2>
-    
-    <table class="products-table">
-        <tr>
-            <td>
-                <div class="product-card">
-                    <input type="checkbox" id="wish1" class="wishlist-btn">
-                    <label for="wish1" class="wishlist-label"></label>
-                    <img src="images/women's_handbags.png " alt="Women's Handbags" class="product-image">
-                    <div class="product-name">Women's Handbags</div>
-                </div>
-            </td>
-            <td>
-                <div class="product-card">
-                    <input type="checkbox" id="wish2" class="wishlist-btn">
-                    <label for="wish2" class="wishlist-label"></label>
-                    <img src="images/womens_small_goods.png" alt="Women's Small Leather Goods" class="product-image">
-                    <div class="product-name">Women's Small Leather Goods</div>
-                </div>
-            </td>
-            <td>
-                <div class="product-card">
-                    <input type="checkbox" id="wish3" class="wishlist-btn">
-                    <label for="wish3" class="wishlist-label"></label>
-                    <img src="images/beauty.png" alt="Beauty" class="product-image">
-                    <div class="product-name">Beauty</div>
-                </div>
-            </td>
-            <td>
-                <div class="product-card">
-                    <input type="checkbox" id="wish4" class="wishlist-btn">
-                    <label for="wish4" class="wishlist-label"></label>
-                    <img src="images/women_shoes.png" alt="Women's Shoes" class="product-image">
-                    <div class="product-name">Women's Shoes</div>
-                </div>
-            </td>
-        </tr>
-    </table>
-    
-    <table class="products-table" id="gifts-him">
-        <tr>
-            <td>
-                <div class="product-card">
-                    <input type="checkbox" id="wish5" class="wishlist-btn">
-                    <label for="wish5" class="wishlist-label"></label>
-                    <img src="images/men_bags.png" alt="Men's Bags" class="product-image">
-                    <div class="product-name">Men's Bags</div>
-                </div>
-            </td>
-            <td>
-                <div class="product-card">
-                    <input type="checkbox" id="wish6" class="wishlist-btn">
-                    <label for="wish6" class="wishlist-label"></label>
-                    <img src="images/men_goods.png" alt="Men's Small Leather Goods" class="product-image">
-                    <div class="product-name">Men's Small Leather Goods</div>
-                </div>
-            </td>
-            <td>
-                <div class="product-card">
-                    <input type="checkbox" id="wish7" class="wishlist-btn">
-                    <label for="wish7" class="wishlist-label"></label>
-                    <img src="images/men_ac.png" alt="Men Accessories" class="product-image">
-                    <div class="product-name">Men Accessories</div>
-                </div>
-            </td>
-            <td>
-                <div class="product-card">
-                    <input type="checkbox" id="wish8" class="wishlist-btn">
-                    <label for="wish8" class="wishlist-label"></label>
-                    <img src="images/perfumes.png" alt="Perfumes" class="product-image">
-                    <div class="product-name">Perfumes</div>
-                </div>
-            </td>
-        </tr>
-    </table>
+    </section>
+
+    <section class="collection-section" id="gifts-her" role="region" aria-label="Women's collection">
+        <h2 class="section-title">Explore a Selection of the Maison's Creations</h2>
+        
+        <div class="products-grid" role="list" aria-label="Women's products">
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish1" class="wishlist-btn" aria-label="Add Women's Handbags to wishlist">
+                <label for="wish1" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/women's_handbags.png" alt="Louis Vuitton Women's Handbags - Luxury leather handbags collection" class="product-image" loading="lazy">
+                <h3 class="product-name">Women's Handbags</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish2" class="wishlist-btn" aria-label="Add Women's Small Leather Goods to wishlist">
+                <label for="wish2" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/womens_small_goods.png" alt="Louis Vuitton Women's Small Leather Goods - Premium accessories" class="product-image" loading="lazy">
+                <h3 class="product-name">Women's Small Leather Goods</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish3" class="wishlist-btn" aria-label="Add Beauty products to wishlist">
+                <label for="wish3" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/beauty.png" alt="Louis Vuitton Beauty Collection - Luxury cosmetics and fragrances" class="product-image" loading="lazy">
+                <h3 class="product-name">Beauty</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish4" class="wishlist-btn" aria-label="Add Women's Shoes to wishlist">
+                <label for="wish4" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/women_shoes.png" alt="Louis Vuitton Women's Shoes - Designer footwear collection" class="product-image" loading="lazy">
+                <h3 class="product-name">Women's Shoes</h3>
+            </article>
+        </div>
+    </section>
+
+    <section class="collection-section" id="gifts-him" role="region" aria-label="Men's collection">
+        <div class="products-grid" role="list" aria-label="Men's products">
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish5" class="wishlist-btn" aria-label="Add Men's Bags to wishlist">
+                <label for="wish5" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/men_bags.png" alt="Louis Vuitton Men's Bags - Luxury briefcases and messenger bags" class="product-image" loading="lazy">
+                <h3 class="product-name">Men's Bags</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish6" class="wishlist-btn" aria-label="Add Men's Small Leather Goods to wishlist">
+                <label for="wish6" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/men_goods.png" alt="Louis Vuitton Men's Small Leather Goods - Wallets and card holders" class="product-image" loading="lazy">
+                <h3 class="product-name">Men's Small Leather Goods</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish7" class="wishlist-btn" aria-label="Add Men's Accessories to wishlist">
+                <label for="wish7" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/men_ac.png" alt="Louis Vuitton Men's Accessories - Belts, ties and luxury accessories" class="product-image" loading="lazy">
+                <h3 class="product-name">Men's Accessories</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish8" class="wishlist-btn" aria-label="Add Perfumes to wishlist">
+                <label for="wish8" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/perfumes.png" alt="Louis Vuitton Perfumes - Luxury fragrances for men and women" class="product-image" loading="lazy">
+                <h3 class="product-name">Perfumes</h3>
+            </article>
+        </div>
+    </section>
+
     <div class="collection-banner">
-        <img src="images/fit1.png" alt="collection-banner-1">
+        <img src="images/fit1.png" alt="Louis Vuitton Vivienne Holiday Collection - Women's luxury fashion" loading="lazy">
     </div>
-    <div class="collection-section">
-        <div class="collection-label">WOMEN</div>
+    
+    <section class="collection-section" role="region" aria-label="Vivienne Holiday collection">
+        <p class="collection-label">WOMEN</p>
         <h2 class="collection-title">Vivienne Holiday</h2>
-        <table class="products-table">
-            <tr>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish13" class="wishlist-btn">
-                        <label for="wish13" class="wishlist-label"></label>
-                        <img src="images/mini_pocheta.png" alt="Mini Pochette Accessoires" class="product-image">
-                        <div class="product-name">Mini Pochette Accessoires</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish14" class="wishlist-btn">
-                        <label for="wish14" class="wishlist-label"></label>
-                        <img src="images/passport_cover.png" alt="Passport Cover" class="product-image">
-                        <div class="product-name">Passport Cover</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish15" class="wishlist-btn">
-                        <label for="wish15" class="wishlist-label"></label>
-                        <img src="images/cosmetic_pouch.png" alt="Cosmetic Pouch PM" class="product-image">
-                        <div class="product-name">Cosmetic Pouch PM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish16" class="wishlist-btn">
-                        <label for="wish16" class="wishlist-label"></label>
-                        <img src="images/husky_bag.png" alt="LV Cute Husky Bag Charm" class="product-image">
-                        <div class="product-name">LV Cute Husky Bag Charm</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        
+        <div class="products-grid" role="list" aria-label="Vivienne Holiday products">
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish13" class="wishlist-btn" aria-label="Add Mini Pochette Accessoires to wishlist">
+                <label for="wish13" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/mini_pocheta.png" alt="Louis Vuitton Mini Pochette Accessoires - Small luxury pouch" class="product-image" loading="lazy">
+                <h3 class="product-name">Mini Pochette Accessoires</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish14" class="wishlist-btn" aria-label="Add Passport Cover to wishlist">
+                <label for="wish14" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/passport_cover.png" alt="Louis Vuitton Passport Cover - Luxury travel accessory" class="product-image" loading="lazy">
+                <h3 class="product-name">Passport Cover</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish15" class="wishlist-btn" aria-label="Add Cosmetic Pouch PM to wishlist">
+                <label for="wish15" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/cosmetic_pouch.png" alt="Louis Vuitton Cosmetic Pouch PM - Makeup bag" class="product-image" loading="lazy">
+                <h3 class="product-name">Cosmetic Pouch PM</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish16" class="wishlist-btn" aria-label="Add LV Cute Husky Bag Charm to wishlist">
+                <label for="wish16" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/husky_bag.png" alt="Louis Vuitton Cute Husky Bag Charm - Animal themed accessory" class="product-image" loading="lazy">
+                <h3 class="product-name">LV Cute Husky Bag Charm</h3>
+            </article>
+        </div>
+        
         <a href="#" class="discover-btn">Discover the Collection</a>
-    </div>
-    
+    </section>
+
     <div class="collection-banner">
-        <video autoplay muted loop playsinline class="banner-video">
+        <video autoplay muted loop playsinline class="banner-video" aria-label="Louis Vuitton Monogram Heritage collection video">
             <source src="images/wap_video.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="collection-section">
-        <div class="collection-label">LEATHER GOODS</div>
+    
+    <section class="collection-section" role="region" aria-label="Monogram Heritage collection">
+        <p class="collection-label">LEATHER GOODS</p>
         <h2 class="collection-title">Monogram Heritage</h2>
-        <table class="products-table">
-            <tr>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish17" class="wishlist-btn">
-                        <label for="wish17" class="wishlist-label"></label>
-                        <img src="images/nil.png" alt="Nil" class="product-image">
-                        <div class="product-name">Nil</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish18" class="wishlist-btn">
-                        <label for="wish18" class="wishlist-label"></label>
-                        <img src="images/owl_bag.png" alt="LV Owl Bag Charm" class="product-image">
-                        <div class="product-name">LV Owl Bag Charm</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish19" class="wishlist-btn">
-                        <label for="wish19" class="wishlist-label"></label>
-                        <img src="images/keepall.png" alt="Keepall Bandoulière 50" class="product-image">
-                        <div class="product-name">Keepall Bandoulière 50</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish20" class="wishlist-btn">
-                        <label for="wish20" class="wishlist-label"></label>
-                        <img src="images/key_pouch.png" alt="Key Pouch S" class="product-image">
-                        <div class="product-name">Key Pouch S</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
+        
+        <div class="products-grid" role="list" aria-label="Monogram Heritage products">
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish17" class="wishlist-btn" aria-label="Add Nil bag to wishlist">
+                <label for="wish17" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/nil.png" alt="Louis Vuitton Nil Bag - Classic monogram design" class="product-image" loading="lazy">
+                <h3 class="product-name">Nil</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish18" class="wishlist-btn" aria-label="Add LV Owl Bag Charm to wishlist">
+                <label for="wish18" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/owl_bag.png" alt="Louis Vuitton Owl Bag Charm - Bird themed luxury accessory" class="product-image" loading="lazy">
+                <h3 class="product-name">LV Owl Bag Charm</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish19" class="wishlist-btn" aria-label="Add Keepall Bandoulière 50 to wishlist">
+                <label for="wish19" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/keepall.png" alt="Louis Vuitton Keepall Bandoulière 50 - Travel bag with strap" class="product-image" loading="lazy">
+                <h3 class="product-name">Keepall Bandoulière 50</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish20" class="wishlist-btn" aria-label="Add Key Pouch S to wishlist">
+                <label for="wish20" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/key_pouch.png" alt="Louis Vuitton Key Pouch S - Small key holder" class="product-image" loading="lazy">
+                <h3 class="product-name">Key Pouch S</h3>
+            </article>
+        </div>
+    </section>
+
     <div class="collection-banner">
-        <img src="images/fit2.png" alt="collection-banner-2">
-    </div>
-    <div class="collection-section">
-        <div class="collection-label">WOMEN</div>
-        <h2 class="collection-title">Fashion Jewelry</h2>
-        <table class="products-table">
-            <tr>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish20" class="wishlist-btn">
-                        <label for="wish20" class="wishlist-label"></label>
-                        <img src="images/bracelet.png" alt="LV Iconic Louisa Strass Bracelet" class="product-image">
-                        <div class="product-name">LV Iconic Louisa Strass Bracelet</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish20" class="wishlist-btn">
-                        <label for="wish20" class="wishlist-label"></label>
-                        <img src="images/necklage.png" alt="LV Iconic Louisa Strass Necklace" class="product-image">
-                        <div class="product-name">LV Iconic Louisa Strass Necklace</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish20" class="wishlist-btn">
-                        <label for="wish20" class="wishlist-label"></label>
-                        <img src="images/earrings.png" alt="LV Iconic Louisa Strass Earrings" class="product-image">
-                        <div class="product-name">LV Iconic Louisa Strass Earrings</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="product-card">
-                        <input type="checkbox" id="wish20" class="wishlist-btn">
-                        <label for="wish20" class="wishlist-label"></label>
-                        <img src="images/strass.png" alt="Louisette Signature Strass Bracelet" class="product-image">
-                        <div class="product-name">Louisette Signature Strass Bracelet</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <img src="images/fit2.png" alt="Louis Vuitton Fashion Jewelry Collection - Luxury bracelets and necklaces" loading="lazy">
     </div>
     
-    <div class="services-section">
+    <section class="collection-section" id="jewelry" role="region" aria-label="Fashion jewelry collection">
+        <p class="collection-label">WOMEN</p>
+        <h2 class="collection-title">Fashion Jewelry</h2>
+        
+        <div class="products-grid" role="list" aria-label="Fashion jewelry products">
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish21" class="wishlist-btn" aria-label="Add LV Iconic Louisa Strass Bracelet to wishlist">
+                <label for="wish21" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/bracelet.png" alt="Louis Vuitton Iconic Louisa Strass Bracelet - Crystal jewelry" class="product-image" loading="lazy">
+                <h3 class="product-name">LV Iconic Louisa Strass Bracelet</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish22" class="wishlist-btn" aria-label="Add LV Iconic Louisa Strass Necklace to wishlist">
+                <label for="wish22" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/necklage.png" alt="Louis Vuitton Iconic Louisa Strass Necklace - Crystal necklace" class="product-image" loading="lazy">
+                <h3 class="product-name">LV Iconic Louisa Strass Necklace</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish23" class="wishlist-btn" aria-label="Add LV Iconic Louisa Strass Earrings to wishlist">
+                <label for="wish23" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/earrings.png" alt="Louis Vuitton Iconic Louisa Strass Earrings - Crystal earrings" class="product-image" loading="lazy">
+                <h3 class="product-name">LV Iconic Louisa Strass Earrings</h3>
+            </article>
+            
+            <article class="product-card" role="listitem">
+                <input type="checkbox" id="wish24" class="wishlist-btn" aria-label="Add Louisette Signature Strass Bracelet to wishlist">
+                <label for="wish24" class="wishlist-label" aria-hidden="true"></label>
+                <img src="images/strass.png" alt="Louis Vuitton Louisette Signature Strass Bracelet - Signature crystal bracelet" class="product-image" loading="lazy">
+                <h3 class="product-name">Louisette Signature Strass Bracelet</h3>
+            </article>
+        </div>
+    </section>
+
+    <section class="services-section" id="services" role="region" aria-label="Louis Vuitton services">
         <div class="services-content">
             <h2 class="services-title">Louis Vuitton Services</h2>
             <p class="services-desc">Louis Vuitton offers an array of tailored services – including Client Advisor support, signature gift wrapping, and exclusive personalization options.</p>
             
-            <table class="services-images">
-                <tr>
-                    <td>
-                        <img src="images/client.png" alt="Client Advisor Servises" class="service-image">
-                        <h3 class="service-name">Client Advisor Servises</h3>
-                        <a href="#" class="service-link">Contact Us</a>
-                    </td>
-                    <td>
-                        <img src="images/gift.png" alt="Art of Gifting" class="service-image">
-                        <h3 class="service-name">Art of Gifting</h3>
-                        <div class="service-links">
-                        <a href="#" class="service-link">Gifts for Women</a>
-                        <a href="#" class="service-link">Gifts for Men</a>
-                        </div>
-                    </td>
-                    <td>
-                        <img src="images/personalization.png" alt="Personalization" class="service-image">
-                        <h3 class="service-name">Personalization</h3>
-                        <a href="#" class="service-link">Explore</a>
-                    </td>
-                </tr>
-            </table>
+            <div class="services-grid" role="list" aria-label="Louis Vuitton services">
+                <div class="service-item" role="listitem">
+                    <img src="images/client.png" alt="Louis Vuitton Client Advisor Services - Personalized shopping assistance" class="service-image" loading="lazy">
+                    <h3 class="service-name">Client Advisor Services</h3>
+                    <a href="#" class="service-link">Contact Us</a>
+                </div>
+                
+                <div class="service-item" role="listitem">
+                    <img src="images/gift.png" alt="Louis Vuitton Art of Gifting - Luxury gift wrapping services" class="service-image" loading="lazy">
+                    <h3 class="service-name">Art of Gifting</h3>
+                    <div class="service-links">
+                        <a href="#gifts-her" class="service-link">Gifts for Women</a>
+                        <a href="#gifts-him" class="service-link">Gifts for Men</a>
+                    </div>
+                </div>
+                
+                <div class="service-item" role="listitem">
+                    <img src="images/personalization.png" alt="Louis Vuitton Personalization Services - Custom monogram and hot stamping" class="service-image" loading="lazy">
+                    <h3 class="service-name">Personalization</h3>
+                    <a href="#" class="service-link">Explore</a>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <table class="footer-table">
-        <tr>
-            <td>
-                <div class="footer-title">HELP</div>
-                <ul>
-                    <li><a href="#">You can call or email us</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Product Care</a></li>
-                    <li><a href="#">Stores</a></li>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">HELP</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:+18002854896">You can call or email us</a></li>
+                    <li><a href="/faq">FAQ's</a></li>
+                    <li><a href="/product-care">Product Care</a></li>
+                    <li><a href="/stores">Stores</a></li>
                 </ul>
-            </td>
-            <td>
-                <div class="footer-title">SERVICES</div>
-                <ul>
-                    <li><a href="#">Repairs</a></li>
-                    <li><a href="#">Personalization</a></li>
-                    <li><a href="#">Art of Gifting</a></li>
-                    <li><a href="#">Download our Apps</a></li>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">SERVICES</h3>
+                <ul class="footer-links">
+                    <li><a href="/repairs">Repairs</a></li>
+                    <li><a href="/personalization">Personalization</a></li>
+                    <li><a href="/gifting">Art of Gifting</a></li>
+                    <li><a href="/apps">Download our Apps</a></li>
                 </ul>
-            </td>
-            <td>
-                <div class="footer-title">ABOUT LOUIS VUITTON</div>
-                <ul>
-                    <li><a href="#">Fashion Shows</a></li>
-                    <li><a href="#">Arts & Culture</a></li>
-                    <li><a href="#">La Maison</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">Latest News</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Foundation Louis Vuitton</a></li>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">ABOUT LOUIS VUITTON</h3>
+                <ul class="footer-links">
+                    <li><a href="/fashion-shows">Fashion Shows</a></li>
+                    <li><a href="/arts-culture">Arts & Culture</a></li>
+                    <li><a href="/maison">La Maison</a></li>
+                    <li><a href="/sustainability">Sustainability</a></li>
+                    <li><a href="/news">Latest News</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/foundation">Foundation Louis Vuitton</a></li>
                 </ul>
-            </td>
-            <td>
-                <div class="footer-title">EMAIL SIGN-UP</div>
-                <p style="color: #666; font-size: 14px; line-height: 1.6;">Sign up for Louis Vuitton emails and receive the latest news from the Maison, including exclusive online pre-launches and new collections</p>
-                <br>
-                <div class="footer-title">Follow Us</div>
-            </td>
-        </tr>
-    </table>
-    
-    <table class="footer-bottom">
-        <tr>
-            <td style="width: 30%;">
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">EMAIL SIGN-UP</h3>
+                <p class="footer-text">Sign up for Louis Vuitton emails and receive the latest news from the Maison, including exclusive online pre-launches and new collections</p>
+                <h3 class="footer-title">Follow Us</h3>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
                 <span class="footer-logo">LOUIS VUITTON</span>
-            </td>
-            <td style="width: 40%; text-align: center;">
-                <a href="#" style="color: #666; text-decoration: none; font-size: 13px;"> International (English)</a>
-            </td>
-            <td class="footer-links">
-                <a href="#">Sitemap</a>
-                <a href="#">Legal & privacy</a>
-                <a href="#">Cookies</a>
-            </td>
-        </tr>
-    </table>
+                <a href="#" class="footer-locale">International (English)</a>
+                <div class="footer-legal">
+                    <a href="/sitemap">Sitemap</a>
+                    <a href="/legal">Legal & privacy</a>
+                    <a href="/cookies">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
