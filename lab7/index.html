@@ -66,27 +66,34 @@
                 return b === 0 ? a : gcd(b, a % b);
             }
 
+            function lcm(a, b) {
+                return (a * b) / gcd(a, b);
+            }
+
             var nums = [];
             for (var i = 0; i < 5; i++) {
                 nums[i] = parseInt(prompt(i+"toog oruul"));
             }
             result = nums[0]
             for (var i = 0; i < 5; i++) {
-                result = gcd(result, nums[i]);
+                result = lcm(result, nums[i]);
             }
-            document.writeln("GCD"+result)
+            document.writeln("lcm"+result);
 
-            var n = parseInt(prompt("eyreg bvhel too oruulnuu surug utga shalgah bicheegvv"));
+
+            var n = parseFloat(prompt("Eyreg bvhel too oruul"));
             var time = new Date().getHours();
             var result;
-            if (time >= 6 && time <18) {
+
+            if (time >= 9 && time <= 12) {
                 result = n * n;
-                document.writeln(result)
-            } else {
+                document.writeln(result);
+            } else if (time > 12 && time <= 18) {
                 result = Math.sqrt(n);
-                document.writeln(result)
+                document.writeln(result);
+            } else {
+                document.writeln("Ugluu bolon Shunii tsagaar valdel hiihgvv");
             }
-            
         </script>
     </body>
 </html>
