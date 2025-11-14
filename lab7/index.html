@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LAB7</title>
+    </head>
+    <body> 
+        <script>
+            var num = parseInt(prompt('too oruul'));
+            var temp = num;
+            var sum = 0;
+            while(temp > 0) {
+                sum += temp % 10;
+                temp = parseInt(temp / 10);
+            }
+            var str = sum.toString();
+            var rev = str.split('').reverse().join('');
+            if (str == rev) {
+                document.writeln("yes");
+                document.writeln(str)
+            } else {
+                document.writeln("no");
+                document.writeln(str)
+            }
+
+            var dist = parseFloat(prompt("enter distance"));
+            var wolf = 25;
+            var rabbit = 18;
+            var time = dist / (wolf - rabbit);
+            var min = parseInt(time * 60);
+            var sec = Math.round((time * 3600) % 60);
+            document.writeln(min + "min" + sec + "sec")
+
+            var num = parseInt(prompt("enter door number"))
+            var floors = 9;
+            var entrances = 3;
+            var doors = 4;
+            var perEntrance = floors * doors;
+            var total = perEntrance * entrances;
+
+            if (num > total) {
+                document.writeln("Tiim haalga baihgv");
+            } else {
+                if ((num % perEntrance) > 0) {
+                var entrance = parseInt((num / perEntrance) + 1);
+                var k = num % perEntrance;
+                if ((k % doors) > 0) {
+                    var floor = parseInt((k / doors) + 1);
+                    var door = parseInt(k % doors);
+                    document.writeln(entrance + "orts" + floor + "davhar" + door + "haalga");
+                } else if ((k % doors) == 0) {
+                    var floor = parseInt((k / doors));
+                    var door = 4;
+                    document.writeln(entrance + "orts" + floor + "davhar" + door + "haalga");
+                }
+            } else if ((num % perEntrance) == 0) {
+                var entrance = (num / perEntrance);
+                var floor = 9;
+                var door = 4;
+                document.writeln(entrance + "orts" + floor + "davhar" + door + "haalga");
+            }
+            }
+
+            function gcd(a, b) {
+                return b === 0 ? a : gcd(b, a % b);
+            }
+
+            var nums = [];
+            for (var i = 0; i < 5; i++) {
+                nums[i] = parseInt(prompt(i+"toog oruul"));
+            }
+            result = nums[0]
+            for (var i = 0; i < 5; i++) {
+                result = gcd(result, nums[i]);
+            }
+            document.writeln("GCD"+result)
+
+            var n = parseInt(prompt("eyreg bvhel too oruulnuu surug utga shalgah bicheegvv"));
+            var time = new Date().getHours();
+            var result;
+            if (time >= 6 && time <18) {
+                result = n * n;
+                document.writeln(result)
+            } else {
+                result = Math.sqrt(n);
+                document.writeln(result)
+            }
+            
+        </script>
+    </body>
+</html>
