@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman</h1>
+        
+        <div class="game-info">
+            <div class="question" id="question">Эхлэх товч дар</div>
+            <div class="answer-display" id="answerDisplay"></div>
+        </div>
+
+        <div class="hangman-container">
+            <div class="canvas-wrapper">
+                <canvas id="hangmanCanvas" width="250" height="300"></canvas>
+            </div>
+            <div class="game-stats">
+                <div class="stat">
+                    <div class="stat-label">Буруу оролдлого:</div>
+                    <div class="stat-value" id="wrongGuesses">0 / 6</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Зөв үсэг:</div>
+                    <div class="stat-value" id="correctGuesses">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="keyboard" id="keyboard"></div>
+
+        <div class="message" id="message"></div>
+
+        <div class="controls">
+            <button class="btn btn-start" id="startBtn" onclick="startGame()">Эхлүүлэх</button>
+            <button class="btn btn-reset" id="resetBtn" onclick="resetGame()" style="display: none;">Дахин тоглох</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
