@@ -140,8 +140,8 @@
             document.getElementById('question').textContent = currentQuestion;
             document.getElementById('startBtn').style.display = 'none';
             document.getElementById('resetBtn').style.display = 'inline-block';
-            document.getElementById('message').className = 'message';
-            document.getElementById('message').style.display = 'none';
+            document.getElementById('message').className = 'message hidden';
+            document.getElementById('message').textContent = '';
 
             createKeyboard();
             updateDisplay();
