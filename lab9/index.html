@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+      <div class="menu-screen" id="menuScreen">
+        <h1>SNAKE GAME</h1>
+        <h2>Choose map size:</h2>
+        <div class="map-options">
+          <div class="map-option" onclick="selectMapSize('small')">
+            <div class="size-name">SMALL</div>
+            <div class="size-detail">400 x 400</div>
+          </div>
+          <div class="map-option selected" onclick="selectMapSize('medium')">
+            <div class="size-name">MEDIUM</div>
+            <div class="size-detail">500 x 500</div>
+          </div>
+          <div class="map-option" onclick="selectMapSize('large')">
+            <div class="size-name">LARGE</div>
+            <div class="size-detail">600 x 600</div>
+          </div>
+        </div>
+        <button class="start-button" onclick="startGameFromMenu()">START</button>
+      </div>
+        <div class="header hidden" id="header">
+            <div class="score"> score: <span id="score">0</span></div>
+            <div class="timer"> <span id="timer">00:00:00</span></div>
+            <div class="high-score"> Record: <span id="highScore">0</span></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        
+        <div class="controls hidden" id="controls">
+            <button onclick="backToMenu()">Back to menu</button>
+            <button id="pauseButton" onclick="togglePause()">Pause</button>
+        </div>
+        
+        <div class="instructions hidden" id="instructions">
+            Controls: W/A/S/D or arrows<br>
+        </div>
+        
+        <div class="game-over" id="gameOver">
+            <h2>Game end!</h2>
+            <p>Your score: <span id="finalScore"></span></p>
+            <p>Time: <span id="finalTime"></span></p>
+            <button onclick="restartGame()">Restart</button>
+            <button onclick="backToMenu()">Back to menu</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
