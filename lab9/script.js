@@ -190,6 +190,15 @@ const canvas = document.getElementById('gameCanvas');
                     return;
                 }
             }
+
+            if (selectedGameMode === 'walls') {
+                for (let wall of walls) {
+                    if (wall.x === food.x && wall.y === food.y) {
+                        generateFood();
+                        return;
+                    }
+                }
+            } 
         }
         
         function update() {
