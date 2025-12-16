@@ -122,7 +122,7 @@ const canvas = document.getElementById('gameCanvas');
                     gameSpeed = 200;
                     break;
                 case 'walls':
-                    gameSpeed = 20;
+                    gameSpeed = 200;
                     generateWalls()
                     console.log("walls mode apply, walls count:", walls.length);
                     break;
