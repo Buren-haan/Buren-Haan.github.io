@@ -10,19 +10,42 @@
     <div class="game-container">
       <div class="menu-screen" id="menuScreen">
         <h1>SNAKE GAME</h1>
+        <h2>Choose game mode:</h2>
+        <div class="mode-options">
+          <div class="mode-option selected" data-mode="classic" onclick="selectGameMode('classic')">
+            <div class="size-name">CLASSIC</div>
+            <div class="size-detail">Classic mode</div>
+          </div>
+          <div class="mode-option" data-mode="walls" onclick="selectGameMode('walls')">
+            <div class="size-name">WALLS</div>
+            <div class="size-detail">Dodge random walls</div>
+          </div>
+          <div class="mode-option" data-mode="portal" onclick="selectGameMode('portal')">
+            <div class="size-name">PORTAL</div>
+            <div class="size-detail">Portal mode</div>
+          </div>
+          <div class="mode-option" data-mode="speed" onclick="selectGameMode('speed')">
+            <div class="size-name">SPEED</div>
+            <div class="size-detail">Speed + 2 minutes</div>
+          </div>
+          <div class="mode-option" data-mode="survival" onclick="selectGameMode('survival')">
+            <div class="size-name">SURVIVAL</div>
+            <div class="size-detail">Survival mode</div>
+          </div>
+        </div>
         <h2>Choose map size:</h2>
         <div class="map-options">
-          <div class="map-option" onclick="selectMapSize('small')">
+          <div class="map-option" data-size="small" onclick="selectMapSize('small')">
             <div class="size-name">SMALL</div>
-            <div class="size-detail">400 x 400</div>
+            <div class="size-detail">15 x 15</div>
           </div>
-          <div class="map-option selected" onclick="selectMapSize('medium')">
+          <div class="map-option selected" data-size="medium" onclick="selectMapSize('medium')">
             <div class="size-name">MEDIUM</div>
-            <div class="size-detail">500 x 500</div>
+            <div class="size-detail">20 x 20</div>
           </div>
-          <div class="map-option" onclick="selectMapSize('large')">
+          <div class="map-option" data-size="large" onclick="selectMapSize('large')">
             <div class="size-name">LARGE</div>
-            <div class="size-detail">600 x 600</div>
+            <div class="size-detail">25 x 25</div>
           </div>
         </div>
         <button class="start-button" onclick="startGameFromMenu()">START</button>

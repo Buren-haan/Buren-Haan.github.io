@@ -2,36 +2,61 @@ const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         
         const MAP_SIZE = {
-          small: 400,
-          medium: 500,
-          large: 600
+          small: 300,
+          medium: 400,
+          large: 500
         };
 
         let selectedMapSize = 'medium';
         let GRID_SIZE = 20;
-        let canvasSize = MAP_SIZE.medium;
+        let canvasSize = MAP_SIZE.large;
         
         let snake = [];
         let food = {};
         let direction = 'right';
         let nextDirection = 'right';
         let score = 0;
-        let highScore = localStorage.getItem('snakeHighScore') || 0;
+        let highScore = {
+            classic: parseInt(localStorage.getItem('snakeHighScore_classic')) || 0,
+            walls: parseInt(localStorage.getItem('snakeHighScore_walls')) || 0,
+            portal: parseInt(localStorage.getItem('snakeHighScore_portal')) || 0,
+            speed: parseInt(localStorage.getItem('snakeHighScore_speed')) || 0
+        };
         let gameLoop;
         let isPaused = false;
         let startTime;
         let elapsedTime = 0;
         let timerInterval;
-        let gameSpeed = 200;
+        let gameSpeed = 250;
         let isGameRunning = false;
+        let selectedGameMode = 'classic';
+        let timeLimit = Infinity;
+        let challengeTimeLeft = 0;
+        let foodType = 'normal';
+        let walls = [];
+
+        let specialFoods = []
+
         
-        document.getElementById('highScore').textContent = highScore;
+        function updateHighScoreDisplay() {
+            const currentHighScore = highScore[selectedGameMode] || 0;
+            document.getElementById('highScore').textContent = currentHighScore;
+        }
 
         function selectMapSize(size) {
           selectedMapSize = size;
+          console.log("map size:", selectedMapSize);
           const options = document.querySelectorAll('.map-option');
           options.forEach(option => option.classList.remove('selected'));
-          event.currentTarget.classList.add('selected');
+          document.querySelector(`[data-size="${size}"]`).classList.add('selected')
+        }
+
+        function selectGameMode(mode) {
+            selectedGameMode = mode;
+            console.log("game mode:", selectedGameMode);
+            const options = document.querySelectorAll('.mode-option');
+            options.forEach(option => option.classList.remove('selected'));
+            document.querySelector(`[data-mode="${mode}"]`).classList.add('selected')
         }
 
         function startGameFromMenu() {
@@ -74,13 +99,43 @@ const canvas = document.getElementById('gameCanvas');
             nextDirection = 'right';
             score = 0;
             isPaused = false;
-            gameSpeed = 200;
+            gameSpeed = 250;
+            walls = []
             updateScore();
+            updateHighScoreDisplay();
             generateFood();
             
             startTime = Date.now();
             elapsedTime = 0;
+            applyGameMode();
             updateTimer();
+            canvas.style.display = 'block';
+            console.log("initgame complete. mode:", selectedGameMode, "walls", walls.length);
+        }
+
+        function applyGameMode() {
+            timeLimit = Infinity;
+            challengeTimeLeft = 0;
+
+            switch(selectedGameMode) {
+                case 'classic':
+                    gameSpeed = 200;
+                    break;
+                case 'walls':
+                    gameSpeed = 20;
+                    generateWalls()
+                    console.log("walls mode apply, walls count:", walls.length);
+                    break;
+                case 'portal':
+                    gameSpeed = 200;
+                    console.log("portal mode apply")
+                    break;
+                case 'speed':
+                    gameSpeed = 150;
+                    timeLimit = 120000;
+                    challengeTimeLeft = timeLimit;
+                    break;
+            }
         }
         
         function startGame() {
@@ -121,9 +176,14 @@ const canvas = document.getElementById('gameCanvas');
             const maxPos = Math.floor(canvasSize / GRID_SIZE);
             food = {
                 x: Math.floor(Math.random() * maxPos) * GRID_SIZE,
-                y: Math.floor(Math.random() * maxPos) * GRID_SIZE
+                y: Math.floor(Math.random() * maxPos) * GRID_SIZE,
+                type: 'normal'
             };
-            
+
+            if (Math.random() < 0.1) {
+                food.type = 'golden';
+            }
+
             for (let segment of snake) {
                 if (segment.x === food.x && segment.y === food.y) {
                     generateFood();
@@ -145,10 +205,28 @@ const canvas = document.getElementById('gameCanvas');
                 case 'left': head.x -= GRID_SIZE; break;
                 case 'right': head.x += GRID_SIZE; break;
             }
-            
-            if (head.x < 0 || head.x >= canvasSize || head.y < 0 || head.y >= canvasSize) {
+
+            if (selectedGameMode === 'portal') {
+                if (head.x < 0) head.x = canvasSize - GRID_SIZE;
+                else if (head.x >= canvasSize) head.x = 0;
+
+                if (head.y < 0) head.y = canvasSize - GRID_SIZE;
+                else if (head.y >= canvasSize) head.y = 0;
+            } else {
+                if (head.x < 0 || head.x >= canvasSize || head.y < 0 || head.y >= canvasSize) {
                 gameOver();
                 return;
+            }
+
+            }
+            
+            if (selectedGameMode === 'walls') {
+                for (let wall of walls) {
+                    if (head.x === wall.x && head.y === wall.y) {
+                        gameOver();
+                        return;
+                    }
+                }
             }
             
             for (let segment of snake) {
@@ -161,14 +239,23 @@ const canvas = document.getElementById('gameCanvas');
             snake.unshift(head);
             
             if (head.x === food.x && head.y === food.y) {
-                score++;
+                if (food.type === 'golden') {
+                    score += 5;
+                } else {
+                    score++;
+                }
+
                 updateScore();
                 generateFood();
-                
-                if (score % 3 === 0 && gameSpeed > 50) {
+
+                if(score % 5 === 0 && gameSpeed > 50) {
                     gameSpeed -= 5;
                     clearInterval(gameLoop);
                     gameLoop = setInterval(update, gameSpeed);
+                }
+
+                if (selectGameMode === 'speed') {
+                    timeLimit += 5000;
                 }
             } else {
                 snake.pop();
@@ -197,14 +284,42 @@ const canvas = document.getElementById('gameCanvas');
                 ctx.lineTo(canvasSize, i);
                 ctx.stroke();
             }
+
+            if (selectedGameMode === 'walls') {
+                walls.forEach(wall => {
+                    ctx.fillStyle = '#666';
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = '#333'
+                    ctx.fillRect(wall.x + 2, wall.y + 2, GRID_SIZE - 4, GRID_SIZE - 4);
+                    ctx.shadowBlur = 0;
+                });
+            }
             
-            ctx.fillStyle = '#ff6b6b';
-            ctx.shadowBlur = 15;
-            ctx.shadowColor = '#ff6b6b';
-            ctx.beginPath();
-            ctx.arc(food.x + GRID_SIZE/2, food.y + GRID_SIZE/2, GRID_SIZE/2 - 2, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.shadowBlur = 0;
+            if (food.type === 'normal') {
+                ctx.fillStyle = '#ff6b6b';
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#ff6b6b';
+                ctx.beginPath();
+                ctx.arc(food.x + GRID_SIZE/2, food.y + GRID_SIZE/2, GRID_SIZE/2 - 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            } else if (food.type === 'golden') {
+                const gradient = ctx.createLinearGradient (
+                    food.x + GRID_SIZE/2, food.y + GRID_SIZE/2, 0,
+                    food.x + GRID_SIZE/2, food.y + GRID_SIZE/2, GRID_SIZE/2 + 2
+                );
+                gradient.addColorStop(0, '#FFD700');
+                gradient.addColorStop(0.7, '#FFA500');
+                gradient.addColorStop(1, '#FF8C00');
+
+                ctx.fillStyle = gradient;
+                ctx.shadowBlur = 25;
+                ctx.shadowColor = '#FFD700'
+                ctx.beginPath();
+                ctx.arc(food.x + GRID_SIZE/2, food.y + GRID_SIZE/2, GRID_SIZE/2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
             
             snake.forEach((segment, index) => {
                 const gradient = ctx.createRadialGradient(
@@ -245,26 +360,39 @@ const canvas = document.getElementById('gameCanvas');
         
         function updateScore() {
             document.getElementById('score').textContent = score;
-            if (score > highScore) {
-                highScore = score;
-                localStorage.setItem('snakeHighScore', highScore);
-                document.getElementById('highScore').textContent = highScore;
+            const currentHighScore = highScore[selectedGameMode] || 0;
+            if (score > currentHighScore) {
+                highScore[selectedGameMode] = score;
+                localStorage.setItem(`snakeHighScore_${selectGameMode}`, score);
+                document.getElementById('highScore').textContent = score;
+                console.log(`New high score ${selectedGameMode}: ${score}`)
             }
         }
         
         function updateTimer() {
             if (!isPaused && startTime) {
-                elapsedTime = Date.now() - startTime;
-                const seconds = Math.floor(elapsedTime / 1000);
-                const minutes = Math.floor(seconds / 60);
-                const hours = Math.floor(minutes / 60);
-                
-                const displayTime = 
-                    String(hours).padStart(2, '0') + ':' +
-                    String(minutes % 60).padStart(2, '0') + ':' +
-                    String(seconds % 60).padStart(2, '0');
-                
-                document.getElementById('timer').textContent = displayTime;
+                const currentElapsed = Date.now() - startTime;
+
+                if (selectedGameMode === 'speed') {
+                    challengeTimeLeft = timeLimit - currentElapsed;
+                    if (challengeTimeLeft <= 0) {
+                        challengeTimeLeft = 0;
+                        gameOver();
+                        return;
+                    }
+
+                    const second = Math.floor(challengeTimeLeft / 1000);
+                    const minute = Math.floor(second / 60);
+                    const displayTime = String(minute).padStart(2, '0') + ':' + String(second % 60).padStart(2, '0');
+                    document.getElementById('timer').textContent = displayTime;
+                } else {
+                    elapsedTime = currentElapsed;
+                    const second = Math.floor(elapsedTime / 1000);
+                    const minute = Math.floor(second / 60);
+                    const hour = Math.floor(minute / 60);
+                    const displayTime = String(hour).padStart(2, '0') + ':' +String(minute % 60).padStart(2, '0') + ':' +String(second % 60).padStart(2, '0');
+                    document.getElementById('timer').textContent = displayTime;
+                }
             }
         }
         
@@ -336,5 +464,40 @@ const canvas = document.getElementById('gameCanvas');
             }
             e.preventDefault();
         });
+
+        function generateWalls() {
+            walls = [];
+            if (selectedGameMode !== 'walls') return;
+
+            const wallCount = Math.floor((canvasSize / GRID_SIZE) / 3);
+            console.log("wall count:", wallCount);
+            for (let i = 0; i < wallCount; i++) {
+                const maxPos = Math.floor(canvasSize / GRID_SIZE);
+                let wall = {
+                    x: Math.floor(Math.random() * maxPos) * GRID_SIZE,
+                    y: Math.floor(Math.random() * maxPos) * GRID_SIZE
+                };
+
+                let isValid = true;
+                for (let segment of snake) {
+                    if (segment.x === walls.x && segment.y === walls.y) {
+                        isValid = false;
+                        break;
+                    }
+                }
+
+                if (food.x === walls.x && food.y === walls.y) {
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    walls.push(wall);
+                } else {
+                    i--;
+                }
+            }
+
+            console.log('Total walls generated:', walls.length);
+            console.log('Walls:', walls);
+        }
         
-        startGame();
