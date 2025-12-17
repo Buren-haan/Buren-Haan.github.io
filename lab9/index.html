@@ -60,6 +60,14 @@
         <div class="controls hidden" id="controls">
             <button onclick="backToMenu()">Back to menu</button>
             <button id="pauseButton" onclick="togglePause()">Pause</button>
+          <div class="dpad" id="dpad">
+            <div class="row"><button onclick="touchMove('up')">▲</button></div>
+            <div class="row">
+              <button onclick="touchMove('left')">◀</button>
+              <button onclick="touchMove('down')">▼</button>
+              <button onclick="touchMove('right')">▶</button>
+            </div>
+          </div>
         </div>
         
         <div class="instructions hidden" id="instructions">

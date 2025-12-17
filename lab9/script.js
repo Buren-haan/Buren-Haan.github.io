@@ -8,7 +8,8 @@ const canvas = document.getElementById('gameCanvas');
         };
 
         let selectedMapSize = 'medium';
-        let GRID_SIZE = 20;
+        const CELL_COUNT = { small: 15, medium: 20, large: 25 };
+        let GRID_SIZE; 
         let canvasSize = MAP_SIZE.large;
         
         let snake = [];
@@ -84,10 +85,18 @@ const canvas = document.getElementById('gameCanvas');
         }
         
         function initGame() {
-            canvasSize = MAP_SIZE[selectedMapSize];
-            canvas.width = canvasSize;
-            canvas.height = canvasSize;
-            
+            const viewportMin = Math.min(window.innerWidth, window.innerHeight);
+            const maxAllowed = MAP_SIZE[selectedMapSize];
+            const computed = Math.floor(viewportMin * 0.88);
+            const desired = Math.min(maxAllowed, computed);
+
+            const cells = CELL_COUNT[selectedMapSize];
+            GRID_SIZE = Math.floor(desired / cells) || 16;
+
+            canvas.width = GRID_SIZE * cells;
+            canvas.height = GRID_SIZE * cells;
+            canvasSize = canvas.width;
+
             const center = Math.floor(canvasSize / GRID_SIZE / 2) * GRID_SIZE;
             snake = [
                 {x: center, y: center},
@@ -111,6 +120,20 @@ const canvas = document.getElementById('gameCanvas');
             updateTimer();
             canvas.style.display = 'block';
             console.log("initgame complete. mode:", selectedGameMode, "walls", walls.length);
+        }
+
+        window.addEventListener('resize', () => {
+            if (!isGameRunning) {
+                try { initGame(); } catch(e){}
+            }
+        });
+
+        function touchMove(dir) {
+            if (isPaused || !isGameRunning) return;
+            if (dir === 'up' && direction !== 'down') nextDirection = 'up';
+            if (dir === 'down' && direction !== 'up') nextDirection = 'down';
+            if (dir === 'left' && direction !== 'right') nextDirection = 'left';
+            if (dir === 'right' && direction !== 'left') nextDirection = 'right';
         }
 
         function applyGameMode() {

@@ -5,14 +5,15 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: white;
-            overflow: hidden;
+          font-family: 'Arial', sans-serif;
+          background: #1a1a1a;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          color: white;
+          overflow: auto;
+          padding: 20px;
         }
 
         .game-container {
@@ -155,11 +156,13 @@
         }
 
         #gameCanvas {
-            border: 4px solid #95e1d3;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(78, 205, 196, 0.5);
-            display: none;
-            margin: 0 auto;
+          border: 4px solid #95e1d3;
+          border-radius: 8px;
+          box-shadow: 0 0 30px rgba(78, 205, 196, 0.5);
+          display: none;
+          margin: 0 auto;
+          max-width: 92vw;
+          height: auto;
         }
 
         #gameCanvas.visible {
@@ -252,4 +255,38 @@
 
         .instructions.hidden {
           display: none;
+        }
+
+        .dpad {
+          display: none;
+          width: 220px;
+          margin: 12px auto 0;
+          touch-action: none;
+        }
+
+        .dpad .row {
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        .dpad button {
+          width: 60px;
+          height: 60px;
+          border-radius: 12px;
+          font-size: 20px;
+          padding: 0;
+        }
+
+        @media (max-width: 720px) {
+          .menu-screen { padding: 30px; }
+          .menu-screen h1 { font-size: 36px; }
+          .mode-option, .map-option { min-width: 100px; padding: 14px 18px; }
+          .header { gap: 12px; padding: 0 8px; }
+          .score { font-size: 18px; }
+          .timer { font-size: 16px; }
+          .high-score { font-size: 14px; }
+          .dpad { display: block; }
+          .controls { flex-direction: column; gap: 12px; }
+          button { padding: 12px 20px; }
         }
