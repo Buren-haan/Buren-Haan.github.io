@@ -1,115 +1,96 @@
  var questions = [
-    'Biggest Mammal?',
-    'Fastest vehicle?',
-    'Capital of Mongolia?',
-    'Longest river in the world?',
-    'Largest planet in solar system?',
-    'Smallest country in the world?',
-    'Tallest mountain?',
-    'Fastest land animal?',
-    'Largest ocean?',
-    'Brightest star at night?',
-    'Country with largest population?',
-    'Largest desert in the world?',
-    'Chemical symbol for gold?',
-    'Planet known as the Red Planet?',
-    'Author of Harry Potter books?',
-    'Largest land animal?',
-    'Currency of Japan?',
-    'Number of continents?',
-    'Largest freshwater lake?',
-    'Inventor of the telephone?',
-    'Country shaped like a boot?',
-    'Largest bird in the world?',
-    'Color of emerald?',
-    'Main ingredient in guacamole?',
-    'Largest species of bear?',
-    'Capital of France?',
-    'Longest bone in human body?',
-    'Planet with rings?',
-    'Largest island in the world?',
-    'First element on periodic table?',
-    'Animal with the longest neck?',
-    'Country known as the Land of the Rising Sun?',
-    'Largest organ in human body?',
-    'Currency of United Kingdom?',
-    'Author of Romeo and Juliet?',
-    'Largest big cat species?',
-    'Capital of Australia?',
-    'Number of days in leap year?',
-    'Largest volcano on Earth?',
-    'Chemical symbol for water?',
-    'Fastest bird?',
-    'Country with most pyramids?',
-    'Largest snake species?',
-    'Color of ruby?',
-    'Main language of Brazil?',
-    'Largest dolphin species?',
-    'Capital of Egypt?',
-    'Number of wonders of ancient world?',
-    'Largest glacier in the world?',
-    'Inventor of electricity?'
- ];
+    'Хамгийн том хөхтөн амьтан?',
+    'Монгол улсын нийслэл?',
+    'Дэлхийн хамгийн урт мөрөн?',
+    'Нарны аймгийн хамгийн том гариг?',
+    'Дэлхийн хамгийн жижиг улс?',
+    'Хамгийн өндөр уул?',
+    'Хамгийн том далай?',
+    'Шөнийн тэнгэрт хамгийн тод од?',
+    'Хамгийн их хүн амтай улс?',
+    'Дэлхийн хамгийн том цөл?',
+    'Улаан гариг гэж нэрлэгддэг гариг?',
+    'Харри Поттер номын зохиогч?',
+    'Хамгийн том хуурай газрын амьтан?',
+    'Японы мөнгөн тэмдэгт?',
+    'Тивийн тоо хэд вэ?',
+    'Гутал шиг хэлбэртэй улс?',
+    'Дэлхийн хамгийн том шувуу?',
+    'Маргад эрдэнийн өнгө?',
+    'Гуакамолегийн үндсэн орц?',
+    'Хамгийн том баавгайн төрөл?',
+    'Франц улсын нийслэл?',
+    'Хүний биеийн хамгийн урт яс?',
+    'Бөгжтэй гэдгээрээ алдартай гариг?',
+    'Дэлхийн хамгийн том арал?',
+    'Үелэх системийн эхний элемент?',
+    'Хамгийн урт хүзүүтэй амьтан?',
+    'Мандах нарны орон гэж аль улсыг хэлдэг вэ?',
+    'Хүний биеийн хамгийн том эрхтэн?',
+    'Их Британийн мөнгөн тэмдэгт?',
+    'Ромео ба Жульетта зохиолын зохиогч?',
+    'Хамгийн том муурын төрөл?',
+    'Хамгийн хурдан шувуу?',
+    'Хамгийн олон пирамидтай улс?',
+    'Хамгийн том могойн төрөл?',
+    'Бадмаараг эрдэнийн өнгө?',
+    'Бразилын албан ёсны хэл?',
+    'Хамгийн том далайн гахайн төрөл?',
+    'Египет улсын нийслэл?',
+    'Эртний дэлхийн гайхамшгийн тоо хэд вэ?',
+    'Цахилгааныг зохион бүтээгч?'
+];
 
- var answers = [
-    'Whale',
-    'Jet',
-    'Ulaanbaatar',
-    'Nile',
-    'Jupiter',
-    'Vatican',
-    'Everest',
-    'Cheetah',
-    'Pacific',
-    'Sirius',
-    'China',
-    'Sahara',
-    'Au',
-    'Mars',
-    'Rowling',
-    'Elephant',
-    'Yen',
-    'Seven',
-    'Superior',
-    'Bell',
-    'Italy',
-    'Ostrich',
-    'Green',
-    'Avocado',
-    'Polar',
-    'Paris',
-    'Femur',
-    'Saturn',
-    'Greenland',
-    'Hydrogen',
-    'Giraffe',
-    'Japan',
-    'Skin',
-    'Pound',
-    'Shakespeare',
-    'Tiger',
-    'Canberra',
-    'Threehundredsixtysix',
-    'Maunaloa',
-    'HtwoO',
-    'Falcon',
-    'Egypt',
-    'Anaconda',
-    'Red',
-    'Portuguese',
-    'Orca',
-    'Cairo',
-    'Seven',
-    'Lambert',
-    'Edison'
- ];
-
+var answers = [
+    'Халим',
+    'Улаанбаатар',
+    'Нил мөрөн',
+    'Бархасбадь',
+    'Ватикан',
+    'Эверест',
+    'Номхон далай',
+    'Сириус',
+    'Хятад',
+    'Сахарын цөл',
+    'Ангараг',
+    'Роулинг',
+    'Заан',
+    'Иен',
+    'Долоо',
+    'Итали',
+    'Тэмээн хяруул',
+    'Ногоон',
+    'Авокадо',
+    'Цагаан баавгай',
+    'Парис',
+    'Гуяны яс',
+    'Санчир',
+    'Гренланд',
+    'Устөрөгч',
+    'Анааш',
+    'Япон',
+    'Арьс',
+    'Фунт',
+    'Шекспир',
+    'Бар',
+    'Шонхор',
+    'Египет',
+    'Анаконда',
+    'Улаан',
+    'Португал хэл',
+    'Орка',
+    'Каир',
+    'Долоо',
+    'Эдисон'
+];
+''
         let currentQuestion = '';
         let currentAnswer = '';
         let guessedLetters = [];
         let wrongGuesses = 0;
         let maxWrong = 7;
         let gameActive = false;
+        let currentPosition = 0;
 
         const canvas = document.getElementById('hangmanCanvas');
         const ctx = canvas.getContext('2d');
@@ -117,7 +98,7 @@
         function createKeyboard() {
             const keyboard = document.getElementById('keyboard');
             keyboard.innerHTML = '';
-            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const letters = 'АБВГДЕЁЖЗИЙКЛМНОӨПРСТУҮФХЦЧШЩЪЫЬЭЮЯ ';
             
             for (let letter of letters) {
                 const key = document.createElement('button');
@@ -133,9 +114,9 @@
             currentQuestion = questions[randomIndex];
             currentAnswer = answers[randomIndex].toUpperCase();
             
-            guessedLetters = [];
             wrongGuesses = 0;
             gameActive = true;
+            currentPosition = 0;
 
             document.getElementById('question').textContent = currentQuestion;
             document.getElementById('startBtn').style.display = 'none';
@@ -150,18 +131,10 @@
         }
 
         function guessLetter(letter) {
-            if (!gameActive || guessedLetters.includes(letter)) return;
+            if (!gameActive ) return;
 
-            guessedLetters.push(letter);
-
-            const keys = document.querySelectorAll('.key');
-            keys.forEach(key => {
-                if (key.textContent === letter) {
-                    key.disabled = true;
-                }
-            });
-
-            if (currentAnswer.includes(letter)) {
+            if (currentAnswer[currentPosition] === letter) {
+                currentPosition++;
                 updateDisplay();
                 updateStats();
                 checkWin();
@@ -175,11 +148,11 @@
 
         function updateDisplay() {
             let display = '';
-            for (let letter of currentAnswer) {
-                if (letter === ' ') {
+            for (let i = 0; i < currentAnswer.length; i++) {
+                if (currentAnswer[i] === '') {
                     display += '  ';
-                } else if (guessedLetters.includes(letter)) {
-                    display += letter + ' ';
+                } else if (i < currentPosition) {
+                    display += currentAnswer[i] + ' ';
                 } else {
                     display += '_ ';
                 }
@@ -265,15 +238,7 @@
         }
 
         function checkWin() {
-            let allGuessed = true;
-            for (let letter of currentAnswer) {
-                if (letter !== ' ' && !guessedLetters.includes(letter)) {
-                    allGuessed = false;
-                    break;
-                }
-            }
-
-            if (allGuessed) {
+            if (currentPosition >= currentAnswer.length) {
                 gameActive = false;
                 const message = document.getElementById('message');
                 message.className = 'message win';
