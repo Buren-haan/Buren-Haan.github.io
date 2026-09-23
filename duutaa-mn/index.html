@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Дуутаа · MN — Монгол дуу таах тоглоом</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- ==================== НҮҮР ==================== -->
+  <section id="screen-home" class="screen active">
+    <div class="home-hero">
+      <h1>Дуутаа · MN</h1>
+      <p class="tagline">Хэдэн секундэд Монгол дуугаа таагаад авах вэ? 0.1с-аас эхэлнэ.</p>
+      <span class="song-count"><span id="song-count-badge">0</span> дуу сантай</span>
+    </div>
+
+    <div class="menu">
+      <button id="btn-solo" class="btn btn-menu">
+        <span>Ганцаараа тоглох<span class="btn-sub">Өөрийгөө сорь</span></span> →
+      </button>
+      <button id="btn-party" class="btn btn-menu">
+        <span>Найзуудтайгаа (нэг утсаар)<span class="btn-sub">Ижил өрөөнд, ээлж дараалан</span></span> →
+      </button>
+      <button id="btn-online" class="btn btn-menu">
+        <span>Онлайн өрөө<span class="btn-sub">Хүн бүр өөрийн утаснаасаа</span></span> →
+      </button>
+    </div>
+  </section>
+
+  <!-- ==================== SOLO ==================== -->
+  <section id="screen-solo" class="screen">
+    <button class="btn-back btn-back-home">← Нүүр</button>
+    <h2>Ганцаараа <span style="color:var(--gold)"><span id="solo-score">0</span> оноо</span></h2>
+    <div id="solo-round"></div>
+    <div id="solo-next-area"></div>
+  </section>
+
+  <section id="screen-solo-summary" class="screen">
+    <h2>Дуусла!</h2>
+    <p>Нийт оноо: <strong id="solo-summary-score" style="color:var(--gold)"></strong> · <span id="solo-summary-count"></span> дуу тоглосон</p>
+    <ul id="solo-summary-list"></ul>
+    <div class="menu" style="margin-top:20px">
+      <button id="btn-solo-again" class="btn btn-primary">Дахин тоглох</button>
+      <button class="btn btn-ghost btn-back-home">Нүүр рүү</button>
+    </div>
+  </section>
+
+  <!-- ==================== PARTY (нэг утсаар) ==================== -->
+  <section id="screen-party-setup" class="screen">
+    <button class="btn-back btn-back-home">← Нүүр</button>
+    <h2>Тоглогчид</h2>
+    <p style="color:var(--text-dim)">Нэрсийг нэмээд, бүгд ижил утсыг сонсоод хэн эхэлж таасныг тэмдэглэнэ.</p>
+    <form id="party-add-form" class="party-add-form">
+      <input type="text" id="party-name-input" placeholder="Тоглогчийн нэр" autocomplete="off" />
+      <button type="submit" class="btn btn-primary" style="flex:0 0 auto">Нэмэх</button>
+    </form>
+    <ul id="party-players-list"></ul>
+    <button id="btn-party-start" class="btn btn-primary" style="width:100%" disabled>Тоглоом эхлүүлэх</button>
+  </section>
+
+  <section id="screen-party-game" class="screen">
+    <button class="btn-back btn-back-home">← Нүүр</button>
+    <h2>Найзуудтайгаа</h2>
+    <div id="party-round"></div>
+    <div id="party-leaderboard"></div>
+  </section>
+
+  <section id="screen-party-summary" class="screen">
+    <h2>Эцсийн үр дүн</h2>
+    <ul id="party-summary-list"></ul>
+    <div class="menu" style="margin-top:20px">
+      <button id="btn-party-again" class="btn btn-primary">Дахин тоглох</button>
+      <button class="btn btn-ghost btn-back-home">Нүүр рүү</button>
+    </div>
+  </section>
+
+  <!-- ==================== ONLINE ==================== -->
+  <section id="screen-online-unavailable" class="screen">
+    <button class="btn-back btn-back-home">← Нүүр</button>
+    <h2>Онлайн өрөө тохируулаагүй байна</h2>
+    <div class="note-box">
+      Онлайн горим ажиллахын тулд Firebase төслийн тохиргоог <code>firebase-config.js</code> файлд бичих
+      шаардлагатай. README.md файлын зааврыг үзнэ үү.
+    </div>
+  </section>
+
+  <section id="screen-online-lobby" class="screen">
+    <button class="btn-back btn-back-home">← Нүүр</button>
+    <h2>Онлайн өрөө</h2>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="create">Өрөө үүсгэх</button>
+      <button class="tab-btn" data-tab="join">Кодоор нэгдэх</button>
+    </div>
+    <form id="online-create-form" class="tab-panel active" data-tab="create">
+      <input type="text" id="online-create-name" placeholder="Таны нэр" autocomplete="off" required />
+      <select id="online-rounds-select">
+        <option value="5">5 дуу</option>
+        <option value="10" selected>10 дуу</option>
+        <option value="15">15 дуу</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Өрөө үүсгэх</button>
+    </form>
+    <form id="online-join-form" class="tab-panel" data-tab="join">
+      <input type="text" id="online-join-name" placeholder="Таны нэр" autocomplete="off" required />
+      <input type="text" id="online-join-code" placeholder="Өрөөний код" autocomplete="off" required style="text-transform:uppercase" />
+      <button type="submit" class="btn btn-primary">Нэгдэх</button>
+    </form>
+  </section>
+
+  <section id="screen-online-lobby-waiting" class="screen">
+    <button class="btn-back btn-back-home">← Нүүр</button>
+    <div class="room-code-display">
+      <div class="code" id="online-room-code">-----</div>
+      <div class="hint">Найзууддаа энэ кодыг өгч, "Кодоор нэгдэх"-өөр орохыг хэл</div>
+    </div>
+    <ul id="online-lobby-players"></ul>
+    <div id="online-host-controls">
+      <button id="btn-online-start-game" class="btn btn-primary" style="width:100%">Тоглоомыг эхлүүлэх</button>
+    </div>
+  </section>
+
+  <section id="screen-online-game" class="screen">
+    <div id="online-round-no"></div>
+    <div id="online-round"></div>
+    <div id="online-status"></div>
+  </section>
+
+  <section id="screen-online-finished" class="screen">
+    <h2>Тоглоом дууслаа 🏁</h2>
+    <ul id="online-final-list"></ul>
+    <button class="btn btn-primary btn-back-home" style="width:100%;margin-top:20px">Нүүр рүү</button>
+  </section>
+
+</div>
+
+<!-- YouTube аудио тоглуулагч (нуугдмал) -->
+<div id="yt-player" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="songs.js"></script>
+<script src="app.js"></script>
+<script src="ui-common.js"></script>
+<script src="solo.js"></script>
+<script src="party.js"></script>
+<script src="firebase-room.js"></script>
+<script src="online.js"></script>
+<script src="main.js"></script>
+<script>
+  // Онлайн лобби tab сэлгэлт
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelector(`.tab-panel[data-tab="${btn.dataset.tab}"]`).classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>

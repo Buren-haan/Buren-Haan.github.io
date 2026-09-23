@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;500;700;800&display=swap');
+
+:root {
+  --bg: #0D1120;
+  --surface: #171D33;
+  --surface-2: #1F2740;
+  --border: #2C3453;
+  --text: #F2EFE6;
+  --text-dim: #8D94B0;
+  --gold: #E7A33C;
+  --teal: #4FB8C4;
+  --ok: #6FCF8E;
+  --fail: #E2685F;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top, #1A2140 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  padding: 28px 20px 60px;
+  position: relative;
+}
+
+.screen { display: none; }
+.screen.active { display: block; animation: fadein .35s ease; }
+@keyframes fadein { from { opacity: 0; transform: translateY(6px);} to { opacity:1; transform:none; } }
+
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 700; margin: 0 0 6px; }
+
+/* -------- Home -------- */
+.home-hero { text-align: left; padding-top: 12px; margin-bottom: 34px; }
+.home-hero h1 { font-size: 2.3rem; line-height: 1.05; color: var(--gold); }
+.home-hero .tagline { color: var(--text-dim); font-size: 1.02rem; margin: 10px 0 0; max-width: 30ch; }
+.song-count { display: inline-block; margin-top: 14px; font-size: .82rem; color: var(--teal); border: 1px solid rgba(79,184,196,.4); padding: 3px 10px; border-radius: 999px; }
+
+.menu { display: flex; flex-direction: column; gap: 12px; margin-top: 26px; }
+
+.btn {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 15px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.btn:active { transform: scale(.98); }
+.btn-menu { display: flex; justify-content: space-between; align-items: center; }
+.btn-menu .btn-sub { display:block; font-weight: 400; font-size: .82rem; color: var(--text-dim); margin-top: 2px; }
+.btn-primary { background: var(--gold); color: #241705; border-color: var(--gold); text-align: center; }
+.btn-ghost { background: transparent; color: var(--teal); border-color: rgba(79,184,196,.4); text-align: center; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn-back { background: none; border: none; color: var(--text-dim); font-weight: 700; padding: 6px 0 18px; cursor: pointer; font-size: .95rem; }
+
+/* -------- Round card -------- */
+.round-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 18px;
+}
+.loading { color: var(--text-dim); padding: 40px 0; text-align: center; }
+
+.level-dots { display: flex; gap: 6px; margin-bottom: 18px; }
+.level-dot {
+  flex: 1; text-align: center; padding: 8px 2px;
+  border-radius: 10px; background: var(--surface-2);
+  border: 1px solid transparent; color: var(--text-dim);
+  display: flex; flex-direction: column; font-size: .72rem;
+}
+.level-dot .dot-time { font-weight: 700; color: var(--text); }
+.level-dot .dot-pts { font-size: .65rem; }
+.level-dot.current { border-color: var(--gold); background: rgba(231,163,60,.12); }
+.level-dot.current .dot-time { color: var(--gold); }
+.level-dot.used { opacity: .45; }
+
+.btn-play { width: 100%; background: var(--teal); border-color: var(--teal); color: #06232a; text-align: center; font-size: 1.05rem; padding: 16px; }
+.btn-play:disabled { background: var(--surface-2); border-color: var(--border); color: var(--text-dim); }
+
+.feedback { min-height: 22px; margin-top: 12px; font-weight: 700; text-align: center; }
+.feedback.ok { color: var(--ok); }
+
+.guess-form { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.guess-input {
+  flex: 1 1 100%; padding: 13px 14px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem;
+}
+.btn-guess { flex: 1; background: var(--gold); border-color: var(--gold); color: #241705; text-align: center; }
+.btn-skip { flex: 1; background: transparent; border-color: var(--border); color: var(--text-dim); text-align: center; }
+
+.result-box { margin-top: 16px; padding: 16px; border-radius: 14px; text-align: center; }
+.result-box.ok { background: rgba(111,207,142,.12); border: 1px solid rgba(111,207,142,.4); }
+.result-box.fail { background: rgba(226,104,95,.12); border: 1px solid rgba(226,104,95,.4); }
+.result-title { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; }
+.result-song { color: var(--text-dim); margin-top: 4px; font-size: .9rem; }
+
+#solo-next-area, #party-round .party-controls { display: flex; gap: 10px; margin-top: 16px; }
+#solo-next-area .btn, .party-controls .btn { flex: 1; }
+
+/* -------- Party -------- */
+#party-players-list { list-style: none; padding: 0; margin: 14px 0; display: flex; flex-direction: column; gap: 8px; }
+#party-players-list li { display: flex; justify-content: space-between; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
+.btn-remove { background: none; border: none; color: var(--fail); font-weight: 700; cursor: pointer; font-size: 1rem; }
+.party-add-form { display: flex; gap: 8px; }
+.party-add-form input { flex: 1; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+
+.who-got-it { margin-top: 18px; }
+.who-got-label { font-weight: 700; margin-bottom: 8px; color: var(--text-dim); font-size: .88rem; }
+.who-got-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn-player { flex: 1 1 45%; background: var(--surface-2); border-color: var(--border); text-align: center; }
+
+#party-leaderboard, #online-status { margin-top: 22px; }
+#party-leaderboard h3, #online-status h3 { font-size: 1rem; color: var(--text-dim); font-weight: 700; margin-bottom: 8px; }
+#party-leaderboard ol, #online-status ol, #solo-summary-list, #party-summary-list, #online-final-list {
+  list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;
+}
+#party-leaderboard li, #online-status li, #solo-summary-list li, #party-summary-list li, #online-final-list li {
+  display: flex; justify-content: space-between; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 14px; font-weight: 600;
+}
+#solo-summary-list li.ok, #party-summary-list li.winner, #online-final-list li.winner { border-color: var(--gold); }
+#solo-summary-list li.fail { opacity: .6; }
+
+/* -------- Online -------- */
+.tabs { display: flex; gap: 8px; margin-bottom: 18px; }
+.tab-btn { flex: 1; padding: 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text-dim); font-weight: 700; cursor: pointer; }
+.tab-btn.active { color: var(--gold); border-color: var(--gold); }
+.tab-panel { display: none; flex-direction: column; gap: 10px; }
+.tab-panel.active { display: flex; }
+.tab-panel input, .tab-panel select { padding: 13px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 1rem; }
+
+.room-code-display { text-align: center; margin: 20px 0; }
+.room-code-display .code { font-family: 'Fraunces', serif; font-size: 2.4rem; letter-spacing: .12em; color: var(--gold); font-weight: 700; }
+.room-code-display .hint { color: var(--text-dim); font-size: .85rem; }
+
+#online-lobby-players { list-style: none; padding: 0; margin: 16px 0; display: flex; flex-direction: column; gap: 6px; }
+#online-lobby-players li { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
+
+.waiting-line { color: var(--text-dim); font-size: .88rem; margin-bottom: 10px; }
+#online-round-no { color: var(--text-dim); font-size: .85rem; margin-bottom: 10px; }
+
+.note-box { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px; color: var(--text-dim); line-height: 1.55; font-size: .92rem; }
+.note-box code { color: var(--teal); }
