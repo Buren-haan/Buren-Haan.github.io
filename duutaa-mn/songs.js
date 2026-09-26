@@ -18,18 +18,18 @@ const SONGS = [
     title: "Chono Süld (Wolf Totem)",
     artist: "The HU",
     youtubeId: "jM8dCGIm6yc",
-    start: 42, // морин хуур + хоолойн дуулал орж ирэх мөч — өөрчилж болно
+    start: 75, // морин хуур + хоолойн дуулал орж ирэх мөч — өөрчилж болно
     answers: ["chono suld", "wolf totem", "the hu", "чоно сүлд"]
   },
 
   // --- Доорхыг жинхэнэ YouTube ID-аар солиод идэвхжүүлнэ үү (одоогоор ID хоосон тул тоглоомд орохгүй) ---
   {
-    id: "placeholder_1",
-    title: "",
-    artist: "",
-    youtubeId: "",
-    start: 0,
-    answers: []
+    id: "the_hu_yuve_yuve_yu",
+    title: "Yuve Yuve Yu",
+    artist: "The HU",
+    youtubeId: "v4xZUr0BEfE",
+    start: 61,
+    answers: ["yuve", "the hu"]
   },
 ];
 
