@@ -18,11 +18,10 @@ const SONGS = [
     title: "Chono Süld (Wolf Totem)",
     artist: "The HU",
     youtubeId: "jM8dCGIm6yc",
-    start: 75, // морин хуур + хоолойн дуулал орж ирэх мөч — өөрчилж болно
+    start: 75,
     answers: ["chono suld", "wolf totem", "the hu", "чоно сүлд"]
   },
 
-  // --- Доорхыг жинхэнэ YouTube ID-аар солиод идэвхжүүлнэ үү (одоогоор ID хоосон тул тоглоомд орохгүй) ---
   {
     id: "the_hu_yuve_yuve_yu",
     title: "Yuve Yuve Yu",
@@ -31,7 +30,16 @@ const SONGS = [
     start: 61,
     answers: ["yuve", "the hu"]
   },
+
+  {
+    id:"boldbaatar_itgel_ym_shuu",
+    title: "Itgel yum shuu (Boldbaatar)",
+    artist: "Boldaatar",
+    youtubeId: "fpGBRCHTXoljKN5o",
+    start: 2,
+    answers: ["itgel ym shuu", ""]
+  }
 ];
 
-// Зөвхөн бөглөгдсөн (youtubeId-тэй) дуунуудыг тоглоомд ашиглана
+
 const ACTIVE_SONGS = SONGS.filter(s => s.youtubeId && s.title);
